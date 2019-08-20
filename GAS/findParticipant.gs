@@ -1,6 +1,3 @@
-var exports = GASUnit.exports
-var assert = GASUnit.assert
-
 function findParticipant(sheet, ticketNumber) {
   var values = sheet.getDataRange().getValues();
   var iventName = sheet.getRange("F1").getValue();
@@ -30,11 +27,3 @@ function doGet(e) {
   res.setContent(retval);
   return res;
 }
-
-
-
-function spreadsheetTest() {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('出欠シート');
-  Logger.log("シート名：%s", sheet.getName());
-}
-
