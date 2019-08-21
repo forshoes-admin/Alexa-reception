@@ -13,18 +13,18 @@ const employeeNumber = (employeeNum) => {
   return request(url);
 };
 
-const replaceWithArabicNumerals = num_string => {
-  let arabic_numerals = num_string.replace(/〇/g, "0");
-  arabic_numerals = arabic_numerals.replace(/一/g, "1");
-  arabic_numerals = arabic_numerals.replace(/二/g, "2");
-  arabic_numerals = arabic_numerals.replace(/三/g, "3");
-  arabic_numerals = arabic_numerals.replace(/四/g, "4");
-  arabic_numerals = arabic_numerals.replace(/五/g, "5");
-  arabic_numerals = arabic_numerals.replace(/六/g, "6");
-  arabic_numerals = arabic_numerals.replace(/七/g, "7");
-  arabic_numerals = arabic_numerals.replace(/八/g, "8");
-  arabic_numerals = arabic_numerals.replace(/九/g, "9");
-  return arabic_numerals;
+const replaceWithArabicNumerals = numString => {
+  let arabicNumerals = numString.replace(/〇/g, "0");
+  arabicNumerals = arabicNumerals.replace(/一/g, "1");
+  arabicNumerals = arabicNumerals.replace(/二/g, "2");
+  arabicNumerals = arabicNumerals.replace(/三/g, "3");
+  arabicNumerals = arabicNumerals.replace(/四/g, "4");
+  arabicNumerals = arabicNumerals.replace(/五/g, "5");
+  arabicNumerals = arabicNumerals.replace(/六/g, "6");
+  arabicNumerals = arabicNumerals.replace(/七/g, "7");
+  arabicNumerals = arabicNumerals.replace(/八/g, "8");
+  arabicNumerals = arabicNumerals.replace(/九/g, "9");
+  return arabicNumerals;
 };
 
 const EmployeeNumberHandler = {
@@ -38,29 +38,29 @@ const EmployeeNumberHandler = {
     console.log("employeeNumberHandlerのhandleの中");
     let speechText = "";
     let response = handlerInput.responseBuilder;
-    const spoken_numbers = [];
+    const spokenNumbers = [];
     try {
-      spoken_numbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
+      spokenNumbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
         "first_number"));
-      spoken_numbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
+      spokenNumbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
         "second_number"));
-      spoken_numbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
+      spokenNumbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
         "third_number"));
-      spoken_numbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
+      spokenNumbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
         "fourth_number"));
-      spoken_numbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
+      spokenNumbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
         "fifth_number"));
-      spoken_numbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
+      spokenNumbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
         "sixth_number"));
-      spoken_numbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
+      spokenNumbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
         "seventh_number"));
-      spoken_numbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
+      spokenNumbers.push(Alexa.getSlotValue(handlerInput.requestEnvelope,
         "eighth_number"));
       let employeeNum = "";
       for (let i = 0; i < 8; i++) {
-        console.log("数字：", spoken_numbers[i]);
-        if (spoken_numbers[i]) {
-          employeeNum += spoken_numbers[i];
+        console.log("数字：", spokenNumbers[i]);
+        if (spokenNumbers[i]) {
+          employeeNum += spokenNumbers[i];
         }
       }
       if (!Number.isNaN(employeeNum)) {
