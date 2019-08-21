@@ -6,7 +6,7 @@ const request = require('request-promise');
 
 const employeeNumber = (employeeNum) => {
   console.log("employeeNumber関数の中");
-  const id = require('./env').spreadsheetID;
+  const id = require('./env').scriptID;
   const url = "https://script.google.com/macros/s/" + id +
     "/exec?ticketnumber=" + employeeNum;
   console.log("url:", url);
