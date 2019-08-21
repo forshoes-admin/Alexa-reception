@@ -215,9 +215,9 @@ exports.handler = Alexa.SkillBuilders.custom()
     EmployeeNumberHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
-    SessionEndedRequestHandler)
-  //SessionEndedRequestHandler,
-  //IntentReflectorHandler) // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
+    SessionEndedRequestHandler,
+    //IntentReflectorHandler, // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
+  )
   .addErrorHandlers(
     ErrorHandler)
   .lambda();
