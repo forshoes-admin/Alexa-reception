@@ -15,7 +15,6 @@ const LaunchRequestHandler = {
         confirmatioinStatus: 'NONE',
         slots: {}
       })
-      .reprompt()
       .getResponse();
   }
 };
