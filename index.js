@@ -107,7 +107,7 @@ const EmployeeNumberHandler = {
     } catch (e) {
       console.error(e);
     }
-    return response.speak(speechText).getResponse();
+    return response.speak(speechText).reprompt(speechText).getResponse();
   }
 };
 
@@ -125,7 +125,6 @@ const LaunchRequestHandler = {
         confirmatioinStatus: 'NONE',
         slots: {}
       })
-      .reprompt()
       .getResponse();
   }
 };
