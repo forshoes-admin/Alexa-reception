@@ -4,7 +4,7 @@
 const Alexa = require('ask-sdk-core');
 const request = require('request-promise');
 
-const employeeNumber = (employeeNum) => {
+const employeeNumber = employeeNum => {
   console.log("employeeNumber関数の中");
   const id = require('./env').scriptID;
   const url = "https://script.google.com/macros/s/" + id +
@@ -94,11 +94,13 @@ const EmployeeNumberHandler = {
           speechText = "<say-as interpret-as='digits'>" + employeeNum
             + "</say-as>番の社員番号が見つかりません。もう一度言ってもらえますか？";
         }
-        response.reprompt(speechText).addElicitSlotDirective("first_number", "second_number", "third_number", "fourth_number",
+        response.reprompt(speechText).addElicitSlotDirective(
+          "first_number", "second_number", "third_number", "fourth_number",
           "fifth_number", "sixth_number", "seventh_number", "eighth_number");
       } else if (speechText === "数字でない") {
         speechText = "よくわかりませんでした。もう一度言ってもらえますか？";
-        response.reprompt(speechText).addElicitSlotDirective("first_number", "second_number", "third_number", "fourth_number",
+        response.reprompt(speechText).addElicitSlotDirective(
+          "first_number", "second_number", "third_number", "fourth_number",
           "fifth_number", "sixth_number", "seventh_number", "eighth_number");
       }
 
