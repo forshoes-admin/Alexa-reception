@@ -80,14 +80,6 @@ const EmployeeNumberHandler = {
 
       if (speechText === "missing") {
         console.log("値が取れなかった");
-        handlerInput.requestEnvelope.request.intent.slots.first_number.value = undefined;
-        handlerInput.requestEnvelope.request.intent.slots.second_number.value = undefined;
-        handlerInput.requestEnvelope.request.intent.slots.third_number.value = undefined;
-        handlerInput.requestEnvelope.request.intent.slots.fourth_number.value = undefined;
-        handlerInput.requestEnvelope.request.intent.slots.fifth_number.value = undefined;
-        handlerInput.requestEnvelope.request.intent.slots.sixth_number.value = undefined;
-        handlerInput.requestEnvelope.request.intent.slots.seventh_number.value = undefined;
-        handlerInput.requestEnvelope.request.intent.slots.eighth_number.value = undefined;
         if (/\?/.test(employeeNum)) {
           speechText = "よくわかりませんでした。受付を始めからやり直してください。";
         } else {
