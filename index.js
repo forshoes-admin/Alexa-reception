@@ -4,8 +4,8 @@
 const Alexa = require('ask-sdk-core');
 const request = require('request-promise');
 
-const employeeNumber = employeeNum => {
-  console.log("employeeNumber関数の中");
+const requestAppsScript = employeeNum => {
+  console.log("requestAppsScript関数の中");
   const id = require('./env').scriptID;
   const url = "https://script.google.com/macros/s/" + id +
     "/exec?ticketnumber=" + employeeNum;
@@ -70,7 +70,7 @@ const EmployeeNumberHandler = {
       if (isNaN(employeeNum)) {
         speechText = "数字でない";
       } else {
-        await employeeNumber(employeeNum)
+        await requestAppsScript(employeeNum)
           .then(val => {
             console.log("speechText: " + val);
             speechText = val;
