@@ -14,16 +14,16 @@ const requestToAppsScript = employeeNum => {
 };
 
 const replaceWithArabicNumerals = numString => {
-  let arabicNumerals = numString.replace(/〇/g, "0");
-  arabicNumerals = arabicNumerals.replace(/一/g, "1");
-  arabicNumerals = arabicNumerals.replace(/二/g, "2");
-  arabicNumerals = arabicNumerals.replace(/三/g, "3");
-  arabicNumerals = arabicNumerals.replace(/四/g, "4");
-  arabicNumerals = arabicNumerals.replace(/五/g, "5");
-  arabicNumerals = arabicNumerals.replace(/六/g, "6");
-  arabicNumerals = arabicNumerals.replace(/七/g, "7");
-  arabicNumerals = arabicNumerals.replace(/八/g, "8");
-  arabicNumerals = arabicNumerals.replace(/九/g, "9");
+  const arabicNumerals = numString.replace(/〇/g, "0")
+    .replace(/一/g, "1")
+    .replace(/二/g, "2")
+    .replace(/三/g, "3")
+    .replace(/四/g, "4")
+    .replace(/五/g, "5")
+    .replace(/六/g, "6")
+    .replace(/七/g, "7")
+    .replace(/八/g, "8")
+    .replace(/九/g, "9");
   return arabicNumerals;
 };
 
